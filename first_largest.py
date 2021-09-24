@@ -4,17 +4,24 @@ Python program to find the largest element and its location.
 def largest_element(a, loc=False):
     """ Return the largest element of a sequence a.
     """
-    Largest_value = a[0]
-    location = 0
-    for i in range(1,len(a)):
-        if a[i] > Largest_value:
-            Largest_value = a[i]
-            location = i
-    if loc == True:
-        return Largest_value,location
-    else:
-        return Largest_value
-
+    try:
+        Largest_value = a[0]
+        location = 0
+        for i in range(1,len(a)):
+            if a[i] > Largest_value:
+                Largest_value = a[i]
+                location = i
+        if loc == True:
+            return Largest_value,location
+        else:
+            return Largest_value
+    except TypeError:
+        print("Your types do not match")
+        return
+    except:
+        print("Unexpected error:")
+        raise
+    
 
 if __name__ == "__main__":
 
